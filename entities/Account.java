@@ -5,18 +5,17 @@ import java.util.Date;
 import java.util.Random;
 
 public class Account {
-    Random random = new Random();
 
     protected Date dateLogup;
     protected String holder;
     protected Integer password;
     protected Double balance;
 
-    public Account(Date dateLogup, String holder, Integer password, Double balance) {
+    public Account(Date dateLogup, String holder, Integer password) {
         this.dateLogup = dateLogup;
         this.holder = holder;
         this.password = password;
-        this.balance = balance;
+        this.balance = null;
     }
 
     public String getHolder() {

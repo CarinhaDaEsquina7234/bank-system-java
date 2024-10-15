@@ -2,14 +2,12 @@ package entities;
 
 import exception.InvalidQuantity;
 import java.util.Date;
+import java.util.Random;
 
 public class BusinessAccount extends Account {
 
-    private double loanLimit;
-
-    public BusinessAccount(Date dateLogup, String holder, Integer password, Double balance, double loanLimit) {
-        super(dateLogup, holder, password, balance);
-        final int id = random.nextInt(1000);
+    public BusinessAccount(Date dateLogup, String holder, Integer password) {
+        super(dateLogup, holder, password);
     }
 
     @Override
@@ -28,9 +26,9 @@ public class BusinessAccount extends Account {
 @Override
     public void withdraw(double amount)
     {
-        if(amount > balance || amount > 100.000)
+        if(amount > balance || amount > 500.000)
         {
-            throw new InvalidQuantity("You cannot attempt to withdraw an amount greater than your balance or greater than U$100.000.");
+            throw new InvalidQuantity("You cannot attempt to withdraw an amount greater than your balance or greater than U$500.000.");
         }
 
         else{
